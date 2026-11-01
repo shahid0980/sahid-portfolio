@@ -38,7 +38,7 @@ export const ExperienceTimeline: React.FC<ExperienceProps> = ({ isDarkMode }) =>
             Work Experience
           </h2>
           <p className={`mt-2 text-base ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-            Vertical chronology highlighting data operations, user resolution, and technical problem-solving.
+            Professional software engineering experience spanning full-stack client web applications, mobile platforms, and technical data operations.
           </p>
         </div>
 

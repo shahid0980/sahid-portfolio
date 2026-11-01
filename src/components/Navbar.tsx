@@ -100,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, setIsDarkMode, onOpe
               </div>
               <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-teal-500/10 text-teal-300 border border-teal-500/20">
                 <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
-                Dubai IT
+                Full Stack Dev
               </span>
             </a>
 

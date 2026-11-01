@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode, onOpenResume }) => {
               <span className="text-teal-400 font-mono font-bold">//</span>
             </div>
             <p className="text-xs sm:text-sm text-slate-400 max-w-md">
-              IT Support Specialist &amp; SaaS Administrator • Al Quoz, Dubai, UAE. Available immediately for on-site placement.
+              Full Stack Developer • React, Next.js, TypeScript, Node.js &amp; AI-Assisted Workflows • Al Quoz, Dubai, UAE.
             </p>
           </div>
 
@@ -102,7 +102,7 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode, onOpenResume }) => {
           <p>© {new Date().getFullYear()} Sahid Khan. All rights reserved.</p>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Dubai, UAE • Available to join immediately, on-site</span>
+            <span>Dubai, UAE • Ready to contribute from day one</span>
           </div>
         </div>
       </div>

@@ -5,12 +5,12 @@ import {
   Clock, 
   GraduationCap, 
   Languages, 
-  Headphones, 
-  ShieldCheck, 
-  CheckCircle,
+  Code2, 
+  Sparkles, 
+  Rocket, 
+  SearchCheck,
   FileText,
-  Mail,
-  Sparkles
+  CheckCircle2
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
@@ -22,44 +22,44 @@ interface AboutProps {
 export const AboutSection: React.FC<AboutProps> = ({ isDarkMode, onOpenResume }) => {
   const highlights = [
     {
-      title: 'Immediate On-Site Availability',
-      desc: 'Based in Al Quoz, Dubai, UAE with full mobility to join immediately on-site.',
-      icon: Clock,
-      color: 'text-emerald-400',
-      border: 'border-emerald-500/30',
-      bg: 'bg-emerald-500/10',
-    },
-    {
-      title: 'End-User Empathy & Clarity',
-      desc: 'Calm, patient troubleshooting for non-technical executives and team members alike.',
-      icon: Headphones,
+      title: 'Full Lifecycle Deployment',
+      desc: 'Delivered live platforms like fihorizon.in from UI and database schema to custom domain, hosting, and email configuration.',
+      icon: Rocket,
       color: 'text-teal-400',
       border: 'border-teal-500/30',
       bg: 'bg-teal-500/10',
     },
     {
-      title: 'Process & Documentation',
-      desc: 'Author of clear setup runbooks, user handover guides, and structured ticketing workflows.',
-      icon: FileText,
+      title: 'AI-First Development Workflow',
+      desc: 'Harnesses LLMs for rapid code scaffolding, refactoring, and test writing—rigorously reviewing every line for performance and security.',
+      icon: Sparkles,
+      color: 'text-indigo-400',
+      border: 'border-indigo-500/30',
+      bg: 'bg-indigo-500/10',
+    },
+    {
+      title: 'Web & Mobile Versatility',
+      desc: 'Expertise across React.js, Next.js, and TypeScript on the web, paired with React Native & Expo for native mobile applications.',
+      icon: Code2,
       color: 'text-cyan-400',
       border: 'border-cyan-500/30',
       bg: 'bg-cyan-500/10',
     },
     {
-      title: 'Data & Dashboard Fluency',
-      desc: 'BCA background combined with Power BI, SQL, and Python (Pandas) automation capabilities.',
-      icon: GraduationCap,
-      color: 'text-indigo-400',
-      border: 'border-indigo-500/30',
-      bg: 'bg-indigo-500/10',
+      title: 'Technical SEO & Performance',
+      desc: 'Deep focus on Core Web Vitals, Google Search Console indexing, clean semantic architecture, and sub-second load times.',
+      icon: SearchCheck,
+      color: 'text-emerald-400',
+      border: 'border-emerald-500/30',
+      bg: 'bg-emerald-500/10',
     },
   ];
 
   const languages = [
     { name: 'English', level: 'Professional Working Proficiency' },
-    { name: 'Hindi', level: 'Native / Bilingual' },
-    { name: 'Urdu', level: 'Fluent' },
-    { name: 'Odia', level: 'Native' },
+    { name: 'Hindi', level: 'Full Working Proficiency' },
+    { name: 'Odia', level: 'Native / Bilingual' },
+    { name: 'Urdu', level: 'Fluent Proficiency' },
   ];
 
   return (
@@ -83,7 +83,7 @@ export const AboutSection: React.FC<AboutProps> = ({ isDarkMode, onOpenResume })
             About Sahid Khan
           </h2>
           <p className={`mt-3 text-base sm:text-lg ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-            Built for fast scanning: here is how I bring technical stability, cloud efficiency, and responsive user care to your Dubai team.
+            Full Stack Developer delivering end-to-end digital experiences, high-performance web platforms, and mobile apps in the UAE.
           </p>
         </div>
 
@@ -97,7 +97,7 @@ export const AboutSection: React.FC<AboutProps> = ({ isDarkMode, onOpenResume })
               : 'bg-slate-50 border-slate-200 shadow-sm'
           }`}>
             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-              <span className="text-teal-400">#</span>
+              <span className="text-teal-400 font-mono">#</span>
               <span>Professional Summary</span>
             </h3>
 
@@ -123,16 +123,16 @@ export const AboutSection: React.FC<AboutProps> = ({ isDarkMode, onOpenResume })
               <div className="flex items-center gap-2">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                  Available Immediately
+                  Ready from Day One
                 </span>
               </div>
             </div>
 
-            {/* Language Fluency */}
+            {/* Language Fluency from resume */}
             <div>
               <h4 className="text-sm font-semibold mb-3 flex items-center gap-2 text-slate-400 font-mono uppercase tracking-wider">
                 <Languages className="w-4 h-4 text-teal-400" />
-                <span>Languages (Dubai Business Environment)</span>
+                <span>Languages</span>
               </h4>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {languages.map((lang) => (
@@ -157,7 +157,7 @@ export const AboutSection: React.FC<AboutProps> = ({ isDarkMode, onOpenResume })
                 href="#contact"
                 className="px-5 py-2.5 rounded-full text-xs font-bold text-slate-950 bg-teal-400 hover:bg-teal-300 transition-all shadow-[0_0_15px_rgba(20,184,166,0.4)]"
               >
-                Reach Out in Dubai
+                Hire / Connect in Dubai
               </a>
               <button
                 onClick={onOpenResume}

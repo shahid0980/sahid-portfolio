@@ -4,12 +4,12 @@ import {
   ExternalLink, 
   ChevronRight, 
   Sparkles, 
-  Terminal, 
+  Smartphone, 
+  Globe, 
   Database, 
-  BarChart, 
   CheckCircle, 
-  Info,
-  X
+  X,
+  Layers
 } from 'lucide-react';
 import { SELECTED_WORK } from '../data/portfolioData';
 import { ProjectItem } from '../types';
@@ -36,116 +36,129 @@ export const SelectedWorkSection: React.FC<ProjectsProps> = ({ isDarkMode }) => 
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 mb-3">
             <FolderGit2 className="w-3.5 h-3.5" />
-            <span>Practical Implementations</span>
+            <span>Featured Production Builds</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Selected Work
+            Selected Projects
           </h2>
           <p className={`mt-2 text-base ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-            Representative cases demonstrating reporting automation, data integrity reconciliation, and end-user system recovery.
-          </p>
-        </div>
-
-        {/* Notice for Sahid to easily replace placeholders */}
-        <div className={`mb-10 p-4 rounded-xl border flex items-center gap-3 max-w-3xl mx-auto ${
-          isDarkMode 
-            ? 'bg-amber-500/10 border-amber-500/30 text-amber-300' 
-            : 'bg-amber-50 border-amber-200 text-amber-900'
-        }`}>
-          <Info className="w-5 h-5 shrink-0" />
-          <p className="text-xs sm:text-sm leading-relaxed">
-            <strong>Template placeholders enabled:</strong> These 3 projects reflect your experience from Fi Horizon and freelance client troubleshooting. You can customize the details anytime.
+            Live multi-page web applications, mobile ordering apps, and scalable full-stack data services.
           </p>
         </div>
 
         {/* 3 Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {SELECTED_WORK.map((proj) => (
-            <div
-              key={proj.id}
-              className={`rounded-2xl border flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1.5 overflow-hidden ${
-                isDarkMode 
-                  ? 'bg-[#0e1628]/85 border-slate-800/90 hover:border-teal-400/60 shadow-xl hover:shadow-[0_0_25px_rgba(20,184,166,0.2)]' 
-                  : 'bg-white border-slate-200 hover:border-teal-500 shadow-md hover:shadow-xl'
-              }`}
-            >
-              <div className="p-6 sm:p-7 flex-1">
-                {/* Category & Placeholder Banner */}
-                <div className="flex items-center justify-between gap-2 mb-4">
-                  <span className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-teal-500/10 text-teal-300 border border-teal-500/25">
-                    {proj.category}
-                  </span>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                    [Placeholder]
-                  </span>
-                </div>
+          {SELECTED_WORK.map((proj) => {
+            const isFiHorizon = proj.id === 'proj-1';
+            const isMobileApp = proj.id === 'proj-2';
 
-                {/* Project Title */}
-                <h3 className="text-lg font-bold mb-3 leading-snug group-hover:text-teal-400 transition-colors">
-                  {proj.title}
-                </h3>
-
-                {/* Summary */}
-                <p className={`text-xs leading-relaxed mb-5 ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-                  {proj.summary}
-                </p>
-
-                {/* Problem & Solution Mini Specs */}
-                <div className={`p-3.5 rounded-xl border text-xs space-y-2.5 mb-5 ${
-                  isDarkMode ? 'bg-[#0a0f1d] border-slate-800' : 'bg-slate-50 border-slate-200'
-                }`}>
-                  <div>
-                    <span className="font-semibold text-rose-400 block mb-0.5">Problem Solved:</span>
-                    <span className={isDarkMode ? 'text-slate-400' : 'text-slate-600'}>{proj.problem}</span>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-teal-400 block mb-0.5">Solution & Tech:</span>
-                    <span className={isDarkMode ? 'text-slate-400' : 'text-slate-600'}>{proj.solution}</span>
-                  </div>
-                </div>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1.5">
-                  {proj.tags.map((t) => (
-                    <span
-                      key={t}
-                      className={`text-[11px] font-mono px-2 py-0.5 rounded ${
-                        isDarkMode 
-                          ? 'bg-slate-900 text-slate-300 border border-slate-800' 
-                          : 'bg-slate-100 text-slate-700 border border-slate-200'
-                      }`}
-                    >
-                      {t}
+            return (
+              <div
+                key={proj.id}
+                className={`rounded-2xl border flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1.5 overflow-hidden ${
+                  isDarkMode 
+                    ? 'bg-[#0e1628]/85 border-slate-800/90 hover:border-teal-400/60 shadow-xl hover:shadow-[0_0_25px_rgba(20,184,166,0.2)]' 
+                    : 'bg-white border-slate-200 hover:border-teal-500 shadow-md hover:shadow-xl'
+                }`}
+              >
+                <div className="p-6 sm:p-7 flex-1">
+                  {/* Category & Production Status Banner */}
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <span className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-teal-500/10 text-teal-300 border border-teal-500/25">
+                      {proj.category}
                     </span>
-                  ))}
+                    <span className={`px-2 py-0.5 rounded text-[10px] font-mono border ${
+                      isFiHorizon
+                        ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+                        : isMobileApp
+                          ? 'bg-cyan-500/15 text-cyan-300 border-cyan-500/30'
+                          : 'bg-indigo-500/15 text-indigo-300 border-indigo-500/30'
+                    }`}>
+                      {proj.badge}
+                    </span>
+                  </div>
+
+                  {/* Project Title */}
+                  <h3 className="text-lg font-bold mb-3 leading-snug group-hover:text-teal-400 transition-colors">
+                    {proj.title}
+                  </h3>
+
+                  {/* Summary */}
+                  <p className={`text-xs leading-relaxed mb-5 ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
+                    {proj.summary}
+                  </p>
+
+                  {/* Problem & Solution Mini Specs */}
+                  <div className={`p-3.5 rounded-xl border text-xs space-y-2.5 mb-5 ${
+                    isDarkMode ? 'bg-[#0a0f1d] border-slate-800' : 'bg-slate-50 border-slate-200'
+                  }`}>
+                    <div>
+                      <span className="font-semibold text-rose-400 block mb-0.5">Challenge &amp; Context:</span>
+                      <span className={isDarkMode ? 'text-slate-400' : 'text-slate-600'}>{proj.problem}</span>
+                    </div>
+                    <div>
+                      <span className="font-semibold text-teal-400 block mb-0.5">Solution &amp; Engineering:</span>
+                      <span className={isDarkMode ? 'text-slate-400' : 'text-slate-600'}>{proj.solution}</span>
+                    </div>
+                  </div>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {proj.tags.map((t) => (
+                      <span
+                        key={t}
+                        className={`text-[11px] font-mono px-2 py-0.5 rounded ${
+                          isDarkMode 
+                            ? 'bg-slate-900 text-slate-300 border border-slate-800' 
+                            : 'bg-slate-100 text-slate-700 border border-slate-200'
+                        }`}
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Card Footer */}
+                <div className={`p-4 border-t flex items-center justify-between ${
+                  isDarkMode ? 'bg-[#090d16] border-slate-800' : 'bg-slate-50 border-slate-200'
+                }`}>
+                  <button
+                    onClick={() => setSelectedProject(proj)}
+                    className="text-xs font-semibold text-teal-400 hover:text-teal-300 flex items-center gap-1 cursor-pointer"
+                  >
+                    <span>View Case Study</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+
+                  <div className="flex items-center gap-2">
+                    {isFiHorizon && (
+                      <a
+                        href="https://fihorizon.in"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs font-mono text-emerald-400 hover:text-emerald-300 flex items-center gap-1 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20"
+                        title="Open Live Site"
+                      >
+                        <Globe className="w-3.5 h-3.5" />
+                        <span>fihorizon.in</span>
+                      </a>
+                    )}
+                    <a
+                      href={proj.githubUrl || 'https://github.com/shahid0980'}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs font-mono text-slate-400 hover:text-white flex items-center gap-1"
+                      title="View on GitHub"
+                    >
+                      <span>Code</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
                 </div>
               </div>
-
-              {/* Card Footer */}
-              <div className={`p-4 border-t flex items-center justify-between ${
-                isDarkMode ? 'bg-[#090d16] border-slate-800' : 'bg-slate-50 border-slate-200'
-              }`}>
-                <button
-                  onClick={() => setSelectedProject(proj)}
-                  className="text-xs font-semibold text-teal-400 hover:text-teal-300 flex items-center gap-1 cursor-pointer"
-                >
-                  <span>View Case Breakdown</span>
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-
-                <a
-                  href={proj.githubUrl || 'https://github.com/shahid0980'}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-xs font-mono text-slate-400 hover:text-white flex items-center gap-1"
-                  title="View on GitHub"
-                >
-                  <span>Codebase</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Modal for Deep Dive Case Breakdown */}
@@ -184,7 +197,7 @@ export const SelectedWorkSection: React.FC<ProjectsProps> = ({ isDarkMode }) => 
                 <div className={`p-4 rounded-xl border ${
                   isDarkMode ? 'bg-[#0a0f1d] border-slate-800' : 'bg-slate-50 border-slate-200'
                 }`}>
-                  <h4 className="font-semibold text-rose-400 mb-1">Challenge & Context</h4>
+                  <h4 className="font-semibold text-rose-400 mb-1">Challenge &amp; Requirements</h4>
                   <p className={isDarkMode ? 'text-slate-300' : 'text-slate-700'}>
                     {selectedProject.problem}
                   </p>
@@ -193,7 +206,7 @@ export const SelectedWorkSection: React.FC<ProjectsProps> = ({ isDarkMode }) => 
                 <div className={`p-4 rounded-xl border ${
                   isDarkMode ? 'bg-[#0a0f1d] border-slate-800' : 'bg-slate-50 border-slate-200'
                 }`}>
-                  <h4 className="font-semibold text-cyan-400 mb-1">Implemented Solution</h4>
+                  <h4 className="font-semibold text-cyan-400 mb-1">Architecture &amp; Engineering Solution</h4>
                   <p className={isDarkMode ? 'text-slate-300' : 'text-slate-700'}>
                     {selectedProject.solution}
                   </p>
@@ -202,7 +215,7 @@ export const SelectedWorkSection: React.FC<ProjectsProps> = ({ isDarkMode }) => 
                 <div className={`p-4 rounded-xl border ${
                   isDarkMode ? 'bg-[#0a0f1d] border-slate-800' : 'bg-slate-50 border-slate-200'
                 }`}>
-                  <h4 className="font-semibold text-emerald-400 mb-1">Business Impact & Operational Value</h4>
+                  <h4 className="font-semibold text-emerald-400 mb-1">Deployment Impact &amp; Results</h4>
                   <p className={isDarkMode ? 'text-slate-300' : 'text-slate-700'}>
                     {selectedProject.impact}
                   </p>
@@ -222,7 +235,19 @@ export const SelectedWorkSection: React.FC<ProjectsProps> = ({ isDarkMode }) => 
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-slate-800 flex justify-end">
+                <div className="pt-4 border-t border-slate-800 flex items-center justify-between">
+                  {selectedProject.id === 'proj-1' ? (
+                    <a
+                      href="https://fihorizon.in"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2 rounded-xl text-xs font-bold bg-emerald-500 text-white hover:bg-emerald-400 inline-flex items-center gap-1.5"
+                    >
+                      <Globe className="w-4 h-4" />
+                      Visit fihorizon.in
+                    </a>
+                  ) : <div />}
+
                   <button
                     onClick={() => setSelectedProject(null)}
                     className="px-6 py-2.5 rounded-full text-xs font-bold bg-teal-400 text-slate-950 hover:bg-teal-300 cursor-pointer"

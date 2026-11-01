@@ -6,13 +6,12 @@ import {
   Linkedin, 
   Github, 
   MapPin, 
-  Clock, 
   Copy, 
   Check, 
   ExternalLink, 
-  Sparkles,
   ShieldCheck,
-  CalendarCheck
+  CalendarCheck,
+  Code2
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
@@ -44,12 +43,12 @@ export const ContactSection: React.FC<ContactProps> = ({ isDarkMode }) => {
           : 'bg-white border-slate-200 text-slate-900'
       }`}
     >
-      {/* Subtle ambient lighting */}
+      {/* Subtle ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Main CTA Card with glowing teal border */}
+        {/* Main CTA Card with glowing border */}
         <div className={`rounded-3xl p-8 sm:p-12 border transition-all ${
           isDarkMode 
             ? 'bg-[#0e1628]/95 border-teal-500/40 shadow-[0_0_40px_rgba(20,184,166,0.15)]' 
@@ -59,18 +58,17 @@ export const ContactSection: React.FC<ContactProps> = ({ isDarkMode }) => {
           <div className="text-center max-w-2xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider text-teal-400 bg-teal-500/15 border border-teal-500/30 mb-4">
               <CalendarCheck className="w-3.5 h-3.5" />
-              <span>Available for Immediate On-Site Placement</span>
+              <span>Available for Immediate Placement in UAE</span>
             </div>
 
-            {/* Prompt's required CTA */}
             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
-              Hire me for on-site IT Support in Dubai
+              Let's Build Something Amazing Together
             </h2>
 
             <p className={`text-base sm:text-lg leading-relaxed ${
               isDarkMode ? 'text-slate-300' : 'text-slate-600'
             }`}>
-              Looking for a dependable, responsive IT support professional for your Dubai office or multi-site branch? I am ready to join immediately with no notice period delay.
+              Looking for a Full Stack Developer in Dubai who can deliver fast, SEO-optimized web and mobile applications with modern React, Next.js, and an AI-first workflow? I am ready to contribute from day one.
             </p>
           </div>
 
@@ -110,7 +108,7 @@ export const ContactSection: React.FC<ContactProps> = ({ isDarkMode }) => {
               </div>
             </div>
 
-            {/* Phone & Call Channel */}
+            {/* Phone & Direct Call */}
             <div className={`p-6 rounded-2xl border flex flex-col justify-between transition-all group ${
               isDarkMode 
                 ? 'bg-[#090d16] border-slate-800 hover:border-cyan-500/50' 
@@ -143,7 +141,7 @@ export const ContactSection: React.FC<ContactProps> = ({ isDarkMode }) => {
               </div>
             </div>
 
-            {/* WhatsApp Channel */}
+            {/* WhatsApp */}
             <div className={`p-6 rounded-2xl border flex flex-col justify-between transition-all group ${
               isDarkMode 
                 ? 'bg-[#090d16] border-slate-800 hover:border-emerald-500/50' 
@@ -171,7 +169,7 @@ export const ContactSection: React.FC<ContactProps> = ({ isDarkMode }) => {
               </div>
             </div>
 
-            {/* LinkedIn Channel */}
+            {/* LinkedIn */}
             <div className={`p-6 rounded-2xl border flex flex-col justify-between transition-all group ${
               isDarkMode 
                 ? 'bg-[#090d16] border-slate-800 hover:border-indigo-500/50' 
@@ -207,23 +205,23 @@ export const ContactSection: React.FC<ContactProps> = ({ isDarkMode }) => {
             isDarkMode ? 'bg-[#090d16] border-slate-800' : 'bg-white border-slate-200'
           }`}>
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20">
+              <div className="p-2.5 rounded-lg bg-teal-500/10 text-teal-400 border border-teal-500/20">
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-xs text-slate-400 font-mono">Location & Working Model</div>
-                <div className="font-bold text-sm">Al Quoz, Dubai, UAE • Full-Time On-Site</div>
+                <div className="text-xs text-slate-400 font-mono">Location &amp; Work Readiness</div>
+                <div className="font-bold text-sm">Al Quoz, Dubai, UAE • Available for On-Site or Hybrid roles</div>
               </div>
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                Immediate Joiner
+                Ready to Join Immediately
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-teal-500/10 text-teal-300 border border-teal-500/30">
-                <ShieldCheck className="w-3.5 h-3.5 text-teal-400" />
-                Document-Ready for UAE Visa
+                <Code2 className="w-3.5 h-3.5 text-teal-400" />
+                React • Next.js • Node.js
               </span>
             </div>
           </div>
