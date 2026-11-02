@@ -9,11 +9,22 @@
   }
 
   body {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family:
+      "Plus Jakarta Sans",
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
   }
-  
-  code, pre, .font-mono {
-    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  code,
+  pre,
+  .font-mono {
+    font-family:
+      "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      monospace;
   }
 }
 
@@ -23,7 +34,9 @@
 }
 
 .glow-teal {
-  box-shadow: 0 0 25px 0px rgba(20, 184, 166, 0.5), 0 0 50px 2px rgba(6, 182, 212, 0.25);
+  box-shadow:
+    0 0 25px 0px rgba(20, 184, 166, 0.5),
+    0 0 50px 2px rgba(6, 182, 212, 0.25);
 }
 
 .glow-cyan-border {
@@ -36,14 +49,14 @@
 
 /* Grid background matching screenshot */
 .bg-grid-cyber {
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 36px 36px;
 }
 
 .bg-grid-cyber-light {
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
   background-size: 36px 36px;
@@ -80,4 +93,21 @@
   .print-only {
     display: block !important;
   }
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+* {
+  box-sizing: border-box;
 }

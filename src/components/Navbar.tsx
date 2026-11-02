@@ -69,17 +69,15 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, setIsDarkMode, onOpe
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-            ? isDarkMode
-              ? 'bg-[#0b0f19]/90 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/30'
-              : 'bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-md shadow-slate-200/50'
-            : isDarkMode
-              ? 'bg-transparent border-b border-transparent'
-              : 'bg-transparent border-b border-transparent'
+        className={`fixed top-0 left-0 right-0 w-full max-w-full overflow-x-clip z-50 transition-all duration-300 ${isScrolled
+          ? isDarkMode
+            ? 'bg-[#0b0f19]/90 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/30'
+            : 'bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-md shadow-slate-200/50'
+          : 'bg-transparent border-b border-transparent'
           }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+        <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+          <div className="flex items-center justify-between h-20 min-w-0 gap-2">
             {/* Logo */}
             <a
               href="#hero"
@@ -87,24 +85,25 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, setIsDarkMode, onOpe
                 e.preventDefault();
                 scrollTo('#hero');
               }}
-              className="flex items-center gap-2 group cursor-pointer"
+              className="flex items-center gap-1.5 group cursor-pointer min-w-0 flex-1"
             >
-              <div className="text-xl md:text-2xl font-bold tracking-tight text-white dark:text-white text-slate-900 flex items-center">
+              <div className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight flex items-center min-w-0 truncate">
                 <span className={isDarkMode ? 'text-white' : 'text-slate-900'}>
                   Sahid Khan
                 </span>
-                <span className="text-teal-400 group-hover:text-cyan-300 transition-colors ml-1 font-mono">
+                <span className="hidden lg:inline-flex shrink-0 items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-teal-500/10 text-teal-300 border border-teal-500/20 whitespace-nowrap">
                   //
                 </span>
               </div>
-              <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-teal-500/10 text-teal-300 border border-teal-500/20">
+              {/* Fixed overflow by changing sm:inline-flex to md:inline-flex */}
+              <span className="hidden md:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-teal-500/10 text-teal-300 border border-teal-500/20 whitespace-nowrap">
                 <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
                 Full Stack Dev
               </span>
             </a>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+            <nav className="hidden lg:flex items-center gap-1 xl:gap-2 shrink-0">
               {navLinks.map((link) => {
                 const isActive = activeSection === link.id;
                 return (
@@ -112,12 +111,12 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, setIsDarkMode, onOpe
                     key={link.name}
                     onClick={() => scrollTo(link.href)}
                     className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all cursor-pointer ${isActive
-                        ? isDarkMode
-                          ? 'text-teal-300 bg-teal-500/10 border border-teal-500/20'
-                          : 'text-teal-700 bg-teal-50 border border-teal-200'
-                        : isDarkMode
-                          ? 'text-slate-300 hover:text-white hover:bg-slate-800/50'
-                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                      ? isDarkMode
+                        ? 'text-teal-300 bg-teal-500/10 border border-teal-500/20'
+                        : 'text-teal-700 bg-teal-50 border border-teal-200'
+                      : isDarkMode
+                        ? 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                       }`}
                   >
                     {link.name}
@@ -127,14 +126,14 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, setIsDarkMode, onOpe
             </nav>
 
             {/* Action Buttons & Socials */}
-            <div className="hidden md:flex items-center gap-3">
+            <div className="hidden md:flex items-center gap-2 shrink-0">
               {/* Theme Toggle */}
               <button
                 onClick={() => setIsDarkMode(!isDarkMode)}
                 title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
                 className={`p-2 rounded-xl border transition-all cursor-pointer ${isDarkMode
-                    ? 'border-slate-800 bg-slate-900/80 text-slate-300 hover:text-amber-300 hover:border-slate-700'
-                    : 'border-slate-200 bg-slate-100 text-slate-700 hover:text-indigo-600 hover:border-slate-300'
+                  ? 'border-slate-800 bg-slate-900/80 text-slate-300 hover:text-amber-300 hover:border-slate-700'
+                  : 'border-slate-200 bg-slate-100 text-slate-700 hover:text-indigo-600 hover:border-slate-300'
                   }`}
                 aria-label="Toggle theme"
               >
@@ -148,8 +147,8 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, setIsDarkMode, onOpe
                 rel="noreferrer"
                 title="View GitHub Profile"
                 className={`p-2 rounded-xl border transition-all ${isDarkMode
-                    ? 'border-slate-800 bg-slate-900/80 text-slate-300 hover:text-white hover:border-slate-700'
-                    : 'border-slate-200 bg-slate-100 text-slate-700 hover:text-slate-900 hover:border-slate-300'
+                  ? 'border-slate-800 bg-slate-900/80 text-slate-300 hover:text-white hover:border-slate-700'
+                  : 'border-slate-200 bg-slate-100 text-slate-700 hover:text-slate-900 hover:border-slate-300'
                   }`}
                 aria-label="GitHub Profile"
               >
@@ -163,15 +162,15 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, setIsDarkMode, onOpe
                 rel="noreferrer"
                 title="View LinkedIn Profile"
                 className={`p-2 rounded-xl border transition-all ${isDarkMode
-                    ? 'border-slate-800 bg-slate-900/80 text-slate-300 hover:text-teal-300 hover:border-slate-700'
-                    : 'border-slate-200 bg-slate-100 text-slate-700 hover:text-teal-700 hover:border-slate-300'
+                  ? 'border-slate-800 bg-slate-900/80 text-slate-300 hover:text-teal-300 hover:border-slate-700'
+                  : 'border-slate-200 bg-slate-100 text-slate-700 hover:text-teal-700 hover:border-slate-300'
                   }`}
                 aria-label="LinkedIn Profile"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
 
-              {/* Glowing Résumé Button - replicated from screenshot */}
+              {/* Glowing Résumé Button */}
               <button
                 onClick={onOpenResume}
                 className="relative group px-5 py-2 rounded-full text-sm font-semibold text-teal-300 border-2 border-teal-400/80 hover:border-teal-300 bg-teal-950/30 hover:bg-teal-500/20 shadow-[0_0_15px_rgba(20,184,166,0.45)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transition-all cursor-pointer flex items-center gap-2"
@@ -183,7 +182,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, setIsDarkMode, onOpe
             </div>
 
             {/* Mobile Controls */}
-            <div className="flex md:hidden items-center gap-2">
+            <div className="flex md:hidden items-center gap-1.5 shrink-0">
               <button
                 onClick={() => setIsDarkMode(!isDarkMode)}
                 className={`p-2 rounded-lg border ${isDarkMode ? 'border-slate-800 text-slate-300' : 'border-slate-200 text-slate-700'
@@ -207,7 +206,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, setIsDarkMode, onOpe
         {/* Mobile menu dropdown */}
         {mobileMenuOpen && (
           <div
-            className={`md:hidden px-4 pt-2 pb-6 border-b transition-all ${isDarkMode
+            className={`md:hidden w-full max-w-full px-3 sm:px-4 pt-2 pb-6 border-b transition-all overflow-x-hidden ${isDarkMode
                 ? 'bg-[#0e1424] border-slate-800 text-white shadow-2xl'
                 : 'bg-white border-slate-200 text-slate-900 shadow-xl'
               }`}
@@ -218,10 +217,10 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, setIsDarkMode, onOpe
                   key={link.name}
                   onClick={() => scrollTo(link.href)}
                   className={`text-left px-3 py-2.5 rounded-lg text-base font-medium transition-colors ${activeSection === link.id
-                      ? 'bg-teal-500/20 text-teal-300'
-                      : isDarkMode
-                        ? 'text-slate-300 hover:bg-slate-800/60'
-                        : 'text-slate-700 hover:bg-slate-100'
+                    ? 'bg-teal-500/20 text-teal-300'
+                    : isDarkMode
+                      ? 'text-slate-300 hover:bg-slate-800/60'
+                      : 'text-slate-700 hover:bg-slate-100'
                     }`}
                 >
                   {link.name}
