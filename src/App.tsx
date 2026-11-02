@@ -35,7 +35,7 @@ export default function App() {
 
   return (
     <div className={`min-h-screen transition-colors duration-300 font-sans ${isDarkMode ? 'bg-[#0b0f19] text-slate-100' : 'bg-slate-50 text-slate-900'}`}>
-      
+
       {/* Sticky Top Navigation */}
       <Navbar
         isDarkMode={isDarkMode}
@@ -67,9 +67,9 @@ export default function App() {
         />
 
         {/* Selected Work (3 Cards) */}
-        <SelectedWorkSection
+        {/* <SelectedWorkSection
           isDarkMode={isDarkMode}
-        />
+        /> */}
 
         {/* Dynamic GitHub Repos Section */}
         <GitHubSection
