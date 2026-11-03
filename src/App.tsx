@@ -15,6 +15,7 @@ import { EducationCertifications } from './components/EducationCertifications';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ResumeModal } from './components/ResumeModal';
+import ChatBot from './components/ChatBot';
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
@@ -99,6 +100,8 @@ export default function App() {
         onClose={() => setIsResumeOpen(false)}
         isDarkMode={isDarkMode}
       />
+
+      <ChatBot />
     </div>
   );
 }
