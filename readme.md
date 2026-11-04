@@ -89,4 +89,4 @@ The site is deployed on Vercel. To deploy your own copy, import the repository i
 
 ## License
 
-[Add a license, e.g. MIT, or remove this section]
+©sahid khan
