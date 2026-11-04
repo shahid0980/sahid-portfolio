@@ -11,7 +11,7 @@ Personal portfolio website showcasing my projects, skills, and experience.
 - **Styling:** Tailwind CSS 4
 - **Animation:** Motion
 - **Icons:** Lucide React
-- **Server / AI:** Express, Google Gemini SDK (`@google/genai`)
+- **Server:** Node js + Express js
 - **Deployment:** Vercel
 
 ## Features
