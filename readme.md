@@ -84,8 +84,8 @@ The site is deployed on Vercel. To deploy your own copy, import the repository i
 - **Location:** Dubai, UAE
 - **Portfolio:** https://sahid-portfolio-ochre.vercel.app
 - **GitHub:** https://github.com/shahid0980
-- **LinkedIn:** [add link]
-- **Email:** [add email]
+- **LinkedIn:** https://www.linkedin.com/in/sahid-khan-073157157?utm_source=share_via&utm_content=profile&utm_medium=member_android
+- **Email:** sahidk0980@gmail.com
 
 ## License
 
