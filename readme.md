@@ -18,7 +18,7 @@ Personal portfolio website showcasing my projects, skills, and experience.
 
 - Responsive, dark-themed single-page design
 - Smooth scrolling and animated sections
-- [Add: projects section, contact form, AI-powered feature, etc.]
+- Ai powder personal chat bot
 
 ## Getting Started
 
