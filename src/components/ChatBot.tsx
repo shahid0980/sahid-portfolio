@@ -1,5 +1,6 @@
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import FormattedText from "./FormattedText";
 import {
     Bot,
     X,
