@@ -252,14 +252,10 @@ export default function ChatBot() {
                                             </div>
                                         )}
 
-                                        <div
-                                            className={`max-w-[82%] whitespace-pre-wrap break-words rounded-2xl px-4 py-3 text-sm leading-6 ${message.role === "user"
-                                                ? "rounded-br-sm bg-blue-600 text-white"
-                                                : "rounded-bl-sm border border-slate-700 bg-slate-800 text-slate-200"
-                                                }`}
-                                        >
-                                            {message.content}
-                                        </div>
+                                        <FormattedText
+  content={message.content}
+  className="text-sm md:text-base"
+/>
 
                                         {message.role === "user" && (
                                             <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-indigo-600/20 text-indigo-400">
