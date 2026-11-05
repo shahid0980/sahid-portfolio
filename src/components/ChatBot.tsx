@@ -333,7 +333,7 @@ export default function ChatBot() {
                                 </div>
 
                                 <p className="mt-3 text-center text-[10px] text-slate-500">
-                                    Powered by AI · Portfolio Virtual Assistant
+                                    Powered by AI · Sahid Assistant
                                 </p>
                             </form>
                         </>
