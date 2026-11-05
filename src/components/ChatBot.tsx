@@ -166,7 +166,7 @@ export default function ChatBot() {
                 <button
                     onClick={() => setIsOpen(true)}
                     aria-label="Open chat assistant"
-                    className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 text-white shadow-xl shadow-blue-900/30 transition-all duration-300 hover:scale-110 hover:shadow-2xl"
+                    className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-sm bg-gradient-to-br from-blue-600 to-indigo-700 text-white shadow-xl shadow-blue-900/30 transition-all duration-300 hover:scale-110 hover:shadow-2xl"
                 >
                     <MessageCircle size={27} />
                     <span className="absolute right-0 top-0 h-4 w-4 rounded-full border-2 border-white bg-green-400" />
